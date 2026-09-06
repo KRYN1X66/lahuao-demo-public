@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lahuao Demo - Public Static Preview</title>
+  <style>
+    body { background:#0b0b0f; color:#e6e6e9; font-family: Inter, Arial, sans-serif; margin:0; padding:0 }
+    .container { max-width:1100px; margin:16px auto; padding:16px }
+    .card { background:linear-gradient(180deg,#0f1115 0%, #0b0b0f 100%); border:1px solid rgba(255,255,255,0.04); padding:12px; border-radius:8px; }
+    input,button { padding:8px; margin:6px 0; border-radius:6px; border:1px solid rgba(255,255,255,0.08); background:transparent; color:inherit }
+    #canvas-wrap { height:360px; border-radius:8px; overflow:hidden; background:#070708; display:flex; align-items:center; justify-content:center }
+    .feed { height:120px; overflow:auto; background:#050507; padding:8px; border-radius:6px }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Lahuao — Public Static Preview</h2>
+    <p>This is a static, client-only demo for mobile preview. No backend is called — all actions are simulated locally.</p>
+    <div class="card">
+      <h3>Demo Controls</h3>
+      <div>
+        <label>Username: <input id="username" placeholder="游客"></label>
+      </div>
+      <div style="margin-top:8px">
+        <button id="btn-gen">生成模拟卡密</button>
+        <button id="btn-redeem">模拟兑换</button>
+        <button id="btn-open">开箱（动画演示）</button>
+      </div>
+      <div style="margin-top:12px">
+        <div>余额: <span id="balance">0</span> U</div>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="card">
+      <h3>开箱演示</h3>
+      <div id="canvas-wrap"><canvas id="game-canvas"></canvas></div>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="card">
+      <h3>实时出货栏（本地模拟）</h3>
+      <div class="feed" id="feed"></div>
+    </div>
+
+  </div>
+
+  <script src="https://pixijs.download/release/pixi.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
